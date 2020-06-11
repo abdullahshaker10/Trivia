@@ -70,9 +70,9 @@ The API will return three error types when requests fail:
 ### Endpoints
 
 ### GET Categories
-    - General
-        - Returns a dictionary of Categories object and sucess value.
-    - Sample ```http://localhost:3000/categories```
+- General
+    - Returns a dictionary of Categories object and sucess value.
+- Sample ```http://localhost:3000/categories```
     
     ```
     {
@@ -90,10 +90,10 @@ The API will return three error types when requests fail:
     ```
 ### GET Questions
 
-    - General
-        - Returns a list of Questions objects, object of categories, current category list, and sucess values.
-        - Results are paginated in groups of 10.
-    - Sample ```http://localhost:3000/questions ```
+- General
+    - Returns a list of Questions objects, object of categories, current category list, and sucess values.
+    - Results are paginated in groups of 10.
+- Sample ```http://localhost:3000/questions ```
     
     ```
     {
@@ -127,11 +127,11 @@ The API will return three error types when requests fail:
        ```
 ### DELETE Questions
 
-    - General
-        - Returns a list of Questions objects without dleted object, count of questins, object of categories, current category list, and sucess values.
-        - Results are paginated in groups of 10.
-        
-    - Sample ```http://localhost:3000/questions/1 ```
+- General
+    - Returns a list of Questions objects without dleted object, count of questins, object of categories, current category list, and sucess values.
+    - Results are paginated in groups of 10.
+
+- Sample ```http://localhost:3000/questions/1 ```
 
    ```
     {
@@ -166,11 +166,11 @@ The API will return three error types when requests fail:
    ```
 ### POST Question
 
-    - General
-        - Returns a list of Questions objects with new object, count of questins, object of categories, current   category list, and sucess values.
-        - Results are paginated in groups of 10.
-        
-    - Sample ```http://localhost:3000/questions ```
+- General
+    - Returns a list of Questions objects with new object, count of questins, object of categories, current   category list, and sucess values.
+    - Results are paginated in groups of 10.
+
+- Sample ```http://localhost:3000/questions ```
     
     
       ```
@@ -206,11 +206,11 @@ The API will return three error types when requests fail:
      ```
     
 ### Start Quiz
-  
-    - General
-        - Returns a Question object, count of questins, object of categories, current category, difficulty, and sucess values.
-        
-    - Sample ```http://localhost:3000/quizzes ```
+
+- General
+    - Returns a Question object, count of questins, object of categories, current category, difficulty, and sucess values.
+
+- Sample ```http://localhost:3000/quizzes ```
 
     ```
     {

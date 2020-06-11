@@ -2,7 +2,7 @@
 
 ## Full Stack Trivia
 
-In Trivia app you can start holding trivia in different fields and answer it if you can.you can list all questions, you can add a question in any field and you can play Trivia game in such field or in all fields together.
+In Trivia app you can start holding a trivia questions in different fields and answering it if you can.you can list all questions, you can add a question in any field and you can play Trivia game in such field or in all fields together.
 
 ## Getting Started
 

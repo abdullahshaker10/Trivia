@@ -2,43 +2,239 @@
 
 ## Full Stack Trivia
 
-Udacity is invested in creating bonding experiences for its employees and students. A bunch of team members got the idea to hold trivia on a regular basis and created a  webpage to manage the trivia app and play the game, but their API experience is limited and still needs to be built out. 
+In Trivia app you can start holding trivia in different fields and answer it if you can.you can list all questions, you can add a question in any field and you can play Trivia game in such field or in all fields together.
 
-That's where you come in! Help them finish the trivia app so they can start holding trivia and seeing who's the most knowledgeable of the bunch. The application must:
+## Getting Started
 
-1) Display questions - both all questions and by category. Questions should show the question, category and difficulty rating by default and can show/hide the answer. 
-2) Delete questions.
-3) Add questions and require that they include question and answer text.
-4) Search for questions based on a text query string.
-5) Play the quiz game, randomizing either all questions or within a specific category. 
+### Pre-requisites and Local Development
 
-Completing this trivia app will give you the ability to structure plan, implement, and test an API - skills essential for enabling your future applications to communicate with others. 
+Developers using this project should already have Python3, pip and node installed in their local machines.
 
-## Tasks
+### FrontEnd
 
-There are `TODO` comments throughout project. Start by reading the READMEs in:
+This project uses NPM to manage software dependencies. NPM Relies on the package.json file located in the `frontend` directory of this repository. After cloning, open your terminal and run:
 
-1. [`./frontend/`](./frontend/README.md)
-2. [`./backend/`](./backend/README.md)
+```bash
+npm install
+npm start
+```
+### BackEnd
 
-We recommend following the instructions in those files in order. This order will look familiar from our prior work in the course.
+#### PIP Dependencies
 
-## Starting and Submitting the Project
+Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
 
-[Fork](https://help.github.com/en/articles/fork-a-repo) the [project repository]() and [Clone](https://help.github.com/en/articles/cloning-a-repository) your forked repository to your machine. Work on the project locally and make sure to push all your changes to the remote repository before submitting the link to your repository in the Classroom. 
+```bash
+pip install -r requirements.txt
+```
 
-## About the Stack
+#### Running the server
 
-We started the full stack application for you. It is desiged with some key functional areas:
+From within the `backend` directory first ensure you are working using your created virtual environment.
 
-### Backend
+To run the server, execute:
 
-The `./backend` directory contains a partially completed Flask and SQLAlchemy server. You will work primarily in app.py to define your endpoints and can reference models.py for DB and SQLAlchemy setup. 
+```bash
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+flask run
+```
+### Tests
+To run the tests, run
+```
+dropdb trivia_test
+createdb trivia_test
+psql trivia_test < trivia.psql
+python test_flaskr.py
+```
+## API Reference
 
-### Frontend
+### Getting Started
+Base URL:At present this app can only run locally ans is not hosted as a base URL. The backend app is hosted at the defult 
+```http://localhost:3000/```
 
-The `./frontend` directory contains a complete React frontend to consume the data from the Flask server. You will need to update the endpoints after you define them in the backend. Those areas are marked with TODO and can be searched for expediency. 
+### Error Handling
+Errors are returned as json objects in hte format 
+```
+{
+    'sucess' : False,
+    'error' : 400,
+    'message' : 'bad request'
+}
+```
+The API will return three error types when requests fail:
+    - 400: Bad Request
+    - 404: Resource Not Found
+    - 422: Not Processable
+    
+### Endpoints
 
-Pay special attention to what data the frontend is expecting from each API response to help guide how you format your API. 
+### GET Categories
+    - General
+        - Returns a dictionary of Categories object and sucess value.
+    - Sample ```http://localhost:3000/categories```
+    
+    ```
+    {
+       "categories": {
+        "1": "Science", 
+        "2": "Art", 
+        "3": "Geography", 
+        "4": "History", 
+        "5": "Entertainment", 
+        "6": "Sports"
+        }, 
+      "success": true
+    }
+   
+   ```
+### GET Questions
 
-[View the README.md within ./frontend for more details.](./frontend/README.md)
+    - General
+        - Returns a list of Questions objects, object of categories, current category list, and sucess values.
+        - Results are paginated in groups of 10.
+    - Sample ```http://localhost:3000/questions ```
+    
+    ```
+    {
+        "categories": {
+          "1": "science", 
+          "2": "art", 
+          "3": "geography", 
+          "4": "history", 
+          "5": "entertainment", 
+          "6": "sports"
+        }, 
+        
+        "current_category": [5, 5, 5, 6, 6, 4, 3, 3, 3, 2],
+        
+        "questions": [
+          {
+            "answer": "Apollo 13", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 2, 
+            "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
+          }, 
+          {
+            "answer": "Tom Cruise", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 4, 
+            "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
+          }, 
+   }
+   ```
+### DELETE Questions
+
+    - General
+        - Returns a list of Questions objects without dleted object, count of questins, object of categories, current category list, and sucess values.
+        - Results are paginated in groups of 10.
+        
+    - Sample ```http://localhost:3000/questions/1 ```
+
+   ```
+    {
+        "categories": {
+          "1": "science", 
+          "2": "art", 
+          "3": "geography", 
+          "4": "history", 
+          "5": "entertainment", 
+          "6": "sports"
+        }, 
+        
+        "current_category": [5, 5, 5, 6, 6, 4, 3, 3, 3, 2],
+        
+        "questions": [
+          {
+            "answer": "Apollo 13", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 2, 
+            "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
+          }, 
+          {
+            "answer": "Tom Cruise", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 4, 
+            "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
+          }, 
+   }
+   
+   ```
+### POST Question
+
+    - General
+        - Returns a list of Questions objects with new object, count of questins, object of categories, current   category list, and sucess values.
+        - Results are paginated in groups of 10.
+        
+    - Sample ```http://localhost:3000/questions ```
+    
+    
+      ```
+    {
+        "categories": {
+          "1": "science", 
+          "2": "art", 
+          "3": "geography", 
+          "4": "history", 
+          "5": "entertainment", 
+          "6": "sports"
+        }, 
+        
+        "current_category": [5, 5, 5, 6, 6, 4, 3, 3, 3, 2],
+        
+        "questions": [
+          {
+            "answer": "Apollo 13", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 2, 
+            "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
+          }, 
+          {
+            "answer": "new anser", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 4, 
+            "question": "new question"
+          }, 
+   }
+   
+     ```
+    
+### Start Quiz
+  
+    - General
+        - Returns a Question object, count of questins, object of categories, current category, difficulty, and sucess values.
+        
+    - Sample ```http://localhost:3000/quizzes ```
+
+    ```
+    {
+  "question": {
+    "answer": "this", 
+    "category": 1, 
+    "difficulty": 1, 
+    "id": 25, 
+    "question": "this"
+    }, 
+    "success": true
+  }
+
+    ```
+    
+## Deployment N/A
+
+## Authors N/A
+
+## Achnowledgement N/A
+
+
+
+
+
+
+

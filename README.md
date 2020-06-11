@@ -125,7 +125,7 @@ The API will return three error types when requests fail:
           }, 
    }
        ```
-### DELETE Questions
+#### DELETE Questions
 
 - General
     - Returns a list of Questions objects without dleted object, count of questins, object of categories, current category list, and sucess values.
@@ -164,7 +164,7 @@ The API will return three error types when requests fail:
    }
    
    ```
-### POST Question
+#### POST Question
 
 - General
     - Returns a list of Questions objects with new object, count of questins, object of categories, current   category list, and sucess values.
@@ -204,7 +204,7 @@ The API will return three error types when requests fail:
 
  ```
     
-### Start Quiz
+#### Start Quiz
 
 - General
     - Returns a Question object, count of questins, object of categories, current category, difficulty, and sucess values.

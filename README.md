@@ -172,37 +172,37 @@ The API will return three error types when requests fail:
 
 - Sample ```http://localhost:3000/questions ```
     
-      ```
-        {
-        "categories": {
-          "1": "science", 
-          "2": "art", 
-          "3": "geography", 
-          "4": "history", 
-          "5": "entertainment", 
-          "6": "sports"
-        }, 
-        
-        "current_category": [5, 5, 5, 6, 6, 4, 3, 3, 3, 2],
-        
-        "questions": [
-          {
-            "answer": "Apollo 13", 
-            "category": 5, 
-            "difficulty": 4, 
-            "id": 2, 
-            "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
-          }, 
-          {
-            "answer": "new anser", 
-            "category": 5, 
-            "difficulty": 4, 
-            "id": 4, 
-            "question": "new question"
-          }, 
-         }
-   
-     ```
+ ```
+    {
+    "categories": {
+      "1": "science", 
+      "2": "art", 
+      "3": "geography", 
+      "4": "history", 
+      "5": "entertainment", 
+      "6": "sports"
+    }, 
+
+    "current_category": [5, 5, 5, 6, 6, 4, 3, 3, 3, 2],
+
+    "questions": [
+      {
+        "answer": "Apollo 13", 
+        "category": 5, 
+        "difficulty": 4, 
+        "id": 2, 
+        "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
+      }, 
+      {
+        "answer": "new anser", 
+        "category": 5, 
+        "difficulty": 4, 
+        "id": 4, 
+        "question": "new question"
+      }, 
+     }
+
+ ```
     
 ### Start Quiz
 

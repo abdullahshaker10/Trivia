@@ -172,7 +172,6 @@ The API will return three error types when requests fail:
 
 - Sample ```http://localhost:3000/questions ```
     
-    
       ```
         {
         "categories": {

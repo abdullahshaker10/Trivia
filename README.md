@@ -124,7 +124,7 @@ The API will return three error types when requests fail:
             "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
           }, 
    }
-   ```
+       ```
 ### DELETE Questions
 
     - General

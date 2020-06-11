@@ -174,7 +174,7 @@ The API will return three error types when requests fail:
     
     
       ```
-    {
+        {
         "categories": {
           "1": "science", 
           "2": "art", 
@@ -201,7 +201,7 @@ The API will return three error types when requests fail:
             "id": 4, 
             "question": "new question"
           }, 
-   }
+         }
    
      ```
     

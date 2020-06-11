@@ -69,7 +69,7 @@ The API will return three error types when requests fail:
     
 ### Endpoints
 
-### GET Categories
+#### GET Categories
 - General
     - Returns a dictionary of Categories object and sucess value.
 - Sample ```http://localhost:3000/categories```
@@ -88,7 +88,7 @@ The API will return three error types when requests fail:
     }
    
     ```
-### GET Questions
+#### GET Questions
 
 - General
     - Returns a list of Questions objects, object of categories, current category list, and sucess values.

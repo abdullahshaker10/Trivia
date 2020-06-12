@@ -69,11 +69,12 @@ The API will return three error types when requests fail:
     
 ### Endpoints
 
-#### GET Categories
-- General
-    - Returns a dictionary of Categories object and sucess value.
-- Sample ```http://localhost:3000/categories```
-    
+#### GET '/categories'
+     - Fetches a dictionary of categories in which the keys are the ids and the value 
+     is the corresponding string of the category
+     - Request Arguments: None
+     - Returns: An object with a single key, categories, that contains 
+     a object of id: category_string key:value pairs. 
     ```
     {
        "categories": {
@@ -88,12 +89,11 @@ The API will return three error types when requests fail:
     }
    
     ```
-#### GET Questions
-
-- General
-    - Returns a list of Questions objects, object of categories, current category list, and sucess values.
-    - Results are paginated in groups of 10.
-- Sample ```http://localhost:3000/questions ```
+#### GET '/questions'
+    - Fetches all questions as objects, dictionary of categories, list of current categories,   
+    - Request Arguments: None.
+    - Return an object with keys categories, current_category, questions,
+    total_questions and sucess value.
     
     ```
     {
@@ -114,25 +114,71 @@ The API will return three error types when requests fail:
             "category": 5, 
             "difficulty": 4, 
             "id": 2, 
-            "question": "What movie earned Tom Hanks his third straight Oscar nomination, in 1996?"
+            "question": "What movie earned Tom Hanks his third straight 
+            Oscar nomination, in 1996?"
           }, 
           {
             "answer": "Tom Cruise", 
             "category": 5, 
             "difficulty": 4, 
             "id": 4, 
-            "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
+            "question": "What actor did author Anne Rice first denounce, 
+            then praise in the role of her beloved Lestat?"
           }, 
-   }
+            "success": true, 
+            "total_questions": 34
+    }
        ```
-#### DELETE Questions
+       
+#### GET '/categories/1/questions'
+    - Fetches all questions in given category   
+    - Request Arguments: category id.
+    - Return an object with keys categories, current_category, questions,
+    total_questions and sucess value.
+    
+    ```
+    {
+        "categories": {
+          "1": "science", 
+          "2": "art", 
+          "3": "geography", 
+          "4": "history", 
+          "5": "entertainment", 
+          "6": "sports"
+        }, 
+        
+        "current_category": [5, 5, 5, 6, 6, 4, 3, 3, 3, 2],
+        
+        "questions": [
+          {
+            "answer": "Apollo 13", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 2, 
+            "question": "What movie earned Tom Hanks his third straight 
+            Oscar nomination, in 1996?"
+          }, 
+          {
+            "answer": "Tom Cruise", 
+            "category": 5, 
+            "difficulty": 4, 
+            "id": 4, 
+            "question": "What actor did author Anne Rice first denounce, 
+            then praise in the role of her beloved Lestat?"
+          }, 
+            "success": true, 
+            "total_questions": 34
+    }
+       ```
+       
+    
 
-- General
-    - Returns a list of Questions objects without dleted object, count of questins, object of categories, current category list, and sucess values.
-    - Results are paginated in groups of 10.
-
-- Sample ```http://localhost:3000/questions/1 ```
-
+#### DELETE '/questions'
+    - Delete a question with specific id.
+    - Request Arguments: question's id.
+    - Returns a object with keys Questions in which questions objects with new added question,
+    count of questins, categories in which all categories, current category 
+    in which list of current categories,and sucess values.
    ```
     {
         "categories": {
@@ -159,18 +205,21 @@ The API will return three error types when requests fail:
             "category": 5, 
             "difficulty": 4, 
             "id": 4, 
-            "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
+            "question": "What actor did author Anne Rice first denounce, 
+            then praise in the role of her beloved Lestat?"
           }, 
+
+        "success": true, 
+        "total_questions": 34
    }
    
    ```
-#### POST Question
-
-- General
-    - Returns a list of Questions objects with new object, count of questins, object of categories, current   category list, and sucess values.
-    - Results are paginated in groups of 10.
-
-- Sample ```http://localhost:3000/questions ```
+#### POST '/questions'
+    - Create new question and add it to db.
+    - Request Arguments:None.
+    - Returns a object with keys Questions in which questions objects with new added question,
+    count of questins, categories in which all categories, current category 
+    in which list of current categories,and sucess values.
     
  ```
     {
@@ -200,16 +249,16 @@ The API will return three error types when requests fail:
         "id": 4, 
         "question": "new question"
       }, 
-     }
+        "success": true, 
+        "total_questions": 34
+    }
 
  ```
     
-#### Start Quiz
-
-- General
-    - Returns a Question object, count of questins, object of categories, current category, difficulty, and sucess values.
-
-- Sample ```http://localhost:3000/quizzes ```
+#### Start Quiz '/quizzes'
+    - Play a game to answer random questions of specific field or of all fields together. 
+    - Request Arguments:None.
+    - Returns object with keys Question for the current question and sucess for sucess values.
 
     ```
     {

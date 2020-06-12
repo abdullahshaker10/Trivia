@@ -70,11 +70,13 @@ The API will return three error types when requests fail:
 ### Endpoints
 
 #### GET '/categories'
-     - Fetches a dictionary of categories in which the keys are the ids and the value 
+
+   - Fetches a dictionary of categories in which the keys are the ids and the value 
      is the corresponding string of the category
-     - Request Arguments: None
-     - Returns: An object with a single key, categories, that contains 
+   - Request Arguments: None
+   - Returns: An object with a single key, categories, that contains 
      a object of id: category_string key:value pairs. 
+    
     ```
     {
        "categories": {
@@ -87,13 +89,14 @@ The API will return three error types when requests fail:
         }, 
       "success": true
     }
-   
-    ```
+    
+     ```
 #### GET '/questions'
-    - Fetches all questions as objects, dictionary of categories, list of current categories,   
-    - Request Arguments: None.
-    - Return an object with keys categories, current_category, questions,
+   - Fetches all questions as objects, dictionary of categories, list of current categories,   
+   - Request Arguments: None.
+   - Return an object with keys categories, current_category, questions,
     total_questions and sucess value.
+    
     
     ```
     {
@@ -131,9 +134,9 @@ The API will return three error types when requests fail:
        ```
        
 #### GET '/categories/1/questions'
-    - Fetches all questions in given category   
-    - Request Arguments: category id.
-    - Return an object with keys categories, current_category, questions,
+   - Fetches all questions in given category   
+   - Request Arguments: category id.
+   - Return an object with keys categories, current_category, questions,
     total_questions and sucess value.
     
     ```
@@ -174,11 +177,12 @@ The API will return three error types when requests fail:
     
 
 #### DELETE '/questions'
-    - Delete a question with specific id.
-    - Request Arguments: question's id.
-    - Returns a object with keys Questions in which questions objects with new added question,
+   - Delete a question with specific id.
+   - Request Arguments: question's id.
+   - Returns a object with keys Questions in which questions objects with new added question,
     count of questins, categories in which all categories, current category 
     in which list of current categories,and sucess values.
+    
    ```
     {
         "categories": {
@@ -215,9 +219,9 @@ The API will return three error types when requests fail:
    
    ```
 #### POST '/questions'
-    - Create new question and add it to db.
-    - Request Arguments:None.
-    - Returns a object with keys Questions in which questions objects with new added question,
+   - Create new question and add it to db.
+   - Request Arguments:None.
+   - Returns a object with keys Questions in which questions objects with new added question,
     count of questins, categories in which all categories, current category 
     in which list of current categories,and sucess values.
     
@@ -256,9 +260,9 @@ The API will return three error types when requests fail:
  ```
     
 #### Start Quiz '/quizzes'
-    - Play a game to answer random questions of specific field or of all fields together. 
-    - Request Arguments:None.
-    - Returns object with keys Question for the current question and sucess for sucess values.
+   - Play a game to answer random questions of specific field or of all fields together. 
+   - Request Arguments:None.
+   - Returns object with keys Question for the current question and sucess for sucess values.
 
     ```
     {

@@ -88,7 +88,7 @@ The API will return three error types when requests fail:
         "6": "Sports"
         }, 
       "success": true
-    }
+      }
     
      ```
 #### GET '/questions'
@@ -265,7 +265,7 @@ The API will return three error types when requests fail:
    - Returns object with keys Question for the current question and sucess for sucess values.
 
     ```
-     {
+      {
       "question": {
         "answer": "this", 
         "category": 1, 
@@ -275,7 +275,7 @@ The API will return three error types when requests fail:
         }, 
         "success": true
       }
-
+      
     ```
     
 ## Deployment N/A

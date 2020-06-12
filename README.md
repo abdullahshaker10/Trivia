@@ -259,12 +259,12 @@ The API will return three error types when requests fail:
 
  ```
     
-#### Start Quiz '/quizzes'
+#### GET '/quizzes'
    - Play a game to answer random questions of specific field or of all fields together. 
    - Request Arguments:None.
    - Returns object with keys Question for the current question and sucess for sucess values.
-
-    ```
+   
+      ```
       {
       "question": {
         "answer": "this", 
@@ -276,7 +276,7 @@ The API will return three error types when requests fail:
         "success": true
       }
       
-    ```
+       ```
     
 ## Deployment N/A
 

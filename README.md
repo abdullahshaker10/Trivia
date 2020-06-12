@@ -77,8 +77,8 @@ The API will return three error types when requests fail:
    - Returns: An object with a single key, categories, that contains 
      a object of id: category_string key:value pairs. 
     
-    ```
-    {
+     ```
+     {
        "categories": {
         "1": "Science", 
         "2": "Art", 
@@ -98,8 +98,8 @@ The API will return three error types when requests fail:
     total_questions and sucess value.
     
     
-    ```
-    {
+       ```
+       {
         "categories": {
           "1": "science", 
           "2": "art", 
@@ -130,7 +130,7 @@ The API will return three error types when requests fail:
           }, 
             "success": true, 
             "total_questions": 34
-    }
+      }
        ```
        
 #### GET '/categories/1/questions'
@@ -139,8 +139,8 @@ The API will return three error types when requests fail:
    - Return an object with keys categories, current_category, questions,
     total_questions and sucess value.
     
-    ```
-    {
+      ```
+      {
         "categories": {
           "1": "science", 
           "2": "art", 
@@ -171,7 +171,7 @@ The API will return three error types when requests fail:
           }, 
             "success": true, 
             "total_questions": 34
-    }
+       }
        ```
        
     
@@ -183,8 +183,8 @@ The API will return three error types when requests fail:
     count of questins, categories in which all categories, current category 
     in which list of current categories,and sucess values.
     
-   ```
-    {
+      ```
+     {
         "categories": {
           "1": "science", 
           "2": "art", 
@@ -215,9 +215,9 @@ The API will return three error types when requests fail:
 
         "success": true, 
         "total_questions": 34
-   }
+     }
    
-   ```
+      ```
 #### POST '/questions'
    - Create new question and add it to db.
    - Request Arguments:None.
@@ -265,16 +265,16 @@ The API will return three error types when requests fail:
    - Returns object with keys Question for the current question and sucess for sucess values.
 
     ```
-    {
-  "question": {
-    "answer": "this", 
-    "category": 1, 
-    "difficulty": 1, 
-    "id": 25, 
-    "question": "this"
-    }, 
-    "success": true
-  }
+     {
+      "question": {
+        "answer": "this", 
+        "category": 1, 
+        "difficulty": 1, 
+        "id": 25, 
+        "question": "this"
+        }, 
+        "success": true
+      }
 
     ```
     
